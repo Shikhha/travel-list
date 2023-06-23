@@ -1,6 +1,12 @@
-function PackingList() {
+import Item from "./Item"
+
+function PackingList({itemList}) {
     return (
-   <div className="list">LIST</div>
+   <div className="list">
+    <ul>
+        {itemList.map((item) => <Item item = {item} />)}
+    </ul>
+   </div>
     );
   }
   
