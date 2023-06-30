@@ -1,13 +1,15 @@
-import Item from "./Item"
+import Item from "./Item";
 
-function PackingList({itemList}) {
-    return (
-   <div className="list">
-    <ul>
-        {itemList.map((item) => <Item item = {item} />)}
-    </ul>
-   </div>
-    );
-  }
-  
-  export default PackingList;
+function PackingList({ itemList, toggleItem, deleteItem }) {
+  return (
+    <div className="list">
+      <ul>
+        {itemList.map((item) => (
+          <Item deleteItem={deleteItem} toggleItem={toggleItem} item={item} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default PackingList;
