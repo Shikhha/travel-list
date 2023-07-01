@@ -14,6 +14,7 @@ function App() {
   const handleAddItem = (item) => {
     setItems((items) => [...items, item]);
   };
+
   const handleToggleItem = (id) => {
     console.log("clicked");
     setItems((items) =>
@@ -27,6 +28,10 @@ function App() {
     console.log("clicked");
     setItems((items) => items.filter((item) => item.id !== id));
   };
+
+  const handleClearItems = () => {
+    setItems([]);
+  };
   return (
     <div className="App">
       <Logo />
@@ -35,6 +40,7 @@ function App() {
         itemList={items}
         deleteItem={handleDeleteItem}
         toggleItem={handleToggleItem}
+        clearItems={handleClearItems}
       />
       <Stats items={items} />
     </div>
